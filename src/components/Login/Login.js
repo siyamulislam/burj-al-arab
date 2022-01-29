@@ -5,12 +5,15 @@ import { initializeApp } from 'firebase/app';
 import firebaseConfig from './firebaseConfig';
 import { getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import { UserContext } from '../../App';
+import { useLocation, useNavigate } from 'react-router-dom';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
 const Login = () => {
      const [loggedInUser,setLoggedInUser]=useContext(UserContext);
+     const  navigate = useNavigate();
+     const { state } = useLocation();
     const handelLogin = ()=>{
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -24,6 +27,7 @@ const Login = () => {
           console.log(displayName,email,photoURL);
           const signInUser= {name: displayName,email, url: photoURL};
            setLoggedInUser(signInUser);
+           navigate(state?.path || "/");
         }).catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;

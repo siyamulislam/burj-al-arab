@@ -8,6 +8,7 @@ import { red } from '@mui/material/colors';
 
 
 export default function Room({room}){
+  
   const navigate =useNavigate()
     const handleBook = (bedType) => {
       navigate(`/book/${bedType}`);
