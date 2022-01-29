@@ -6,10 +6,12 @@ import Login from './components/Login/Login';
 import Book from './components/Book/Book';
 import Header from './components/Header/Header';
 
+const UserContext= React.createContext();
 function App() {
+  const [loggedInUser,setLoggedInUser]=useState({});
   return (
-
-    <Router>
+    <UserContext.Provider value={[ loggedInUser,setLoggedInUser ]}>
+      <Router>
     <Header></Header> 
       <Routes> 
           <Route  path="/home"                   element={<Home/>}             />  
@@ -18,6 +20,8 @@ function App() {
           <Route  exact path="/"                 element={<Home/>}             />
       </Routes>
     </Router>
+    </UserContext.Provider>
+    
   );
 }
 
