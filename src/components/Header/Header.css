@@ -27,11 +27,15 @@
     font-weight: bold;
   }
   .signInUser{
-      color: rgb(135, 245, 120);
+      color: rgb(135, 245, 120); 
+      font-weight: bold;
   }
   .userLogo{
       height: 40px;
       border-radius: 20px;
       margin-top: 25px;
       position: absolute;
+  }
+  .authUser{
+    color: rgb(185, 245, 177); 
   }

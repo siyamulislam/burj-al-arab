@@ -14,6 +14,7 @@ const Login = () => {
      const [loggedInUser,setLoggedInUser]=useContext(UserContext);
      const  navigate = useNavigate();
      const { state } = useLocation();
+     
     const handelLogin = ()=>{
         signInWithPopup(auth, provider)
         .then((result) => {
