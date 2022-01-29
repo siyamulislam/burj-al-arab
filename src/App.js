@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Book from './components/Book/Book';
 import Header from './components/Header/Header';
+import RequireAuth from './components/RequireAuth/RequireAuth';
+
 export const UserContext= React.createContext();
 
 function App() {
@@ -14,10 +16,10 @@ function App() {
     <Router>
       <Header></Header> 
       <Routes> 
-          <Route  path="/home"                   element={<Home/>}             />  
-          <Route  path="/login"                  element={<Login/>}            />  
-          <Route  path="/book/:bedType"          element={<Book/>}             />  
-          <Route  exact path="/"                 element={<Home/>}             />
+          <Route  path="/home"                   element={<Home/>}                                        />  
+          <Route  path="/login"                  element={<Login/>}                                       />  
+          <Route  path="/book/:bedType"          element={<RequireAuth><Book/></RequireAuth>}             />  
+          <Route  exact path="/"                 element={<Home/>}                                        />
       </Routes>
     </Router>
     </UserContext.Provider>
