@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import header from '../../images/header.png';
 import logo from '../../images/icons/logo.png';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    
+    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     return (
         <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${header})` }} className="header">
             <nav className="nav">
@@ -21,6 +24,9 @@ const Header = () => {
                     <li>
                         <Link className="btn-book" to="/book">Book</Link>
                     </li>
+                   <li>  <span><img className="userLogo" src={loggedInUser.url} alt=""/></span></li>
+                   <li className="signInUser">  {loggedInUser.name && 'hi, ' +loggedInUser.name}  </li>
+                  
                 </ul>
             </nav>
             <div className="title-container">

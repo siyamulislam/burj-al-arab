@@ -26,3 +26,12 @@
     color: rgba(255, 255, 255, 0.877);
     font-weight: bold;
   }
+  .signInUser{
+      color: rgb(135, 245, 120);
+  }
+  .userLogo{
+      height: 40px;
+      border-radius: 20px;
+      margin-top: 25px;
+      position: absolute;
+  }
