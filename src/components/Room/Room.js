@@ -1,14 +1,17 @@
 import React from 'react'; 
+
+import { makeStyles } from '@mui/styles';
 import { useNavigate } from 'react-router-dom';
 import {AttachMoney,LocalHotel,Wc as WcIcon} from '@mui/icons-material/';
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material';
+ 
 
 import { red } from '@mui/material/colors';
-
+ 
 
 
 export default function Room({room}){
-  
+
   const navigate =useNavigate()
     const handleBook = (bedType) => {
       navigate(`/book/${bedType}`);
