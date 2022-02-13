@@ -27,7 +27,7 @@ const Login = () => {
                 const signInUser = { name: displayName, email, url: photoURL };
                 setLoggedInUser(signInUser);
                 storeAuthToken()
-                navigate(state?.path || "/");
+                
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -40,7 +40,8 @@ const Login = () => {
         auth.currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
             // Send token to your backend via HTTPS 
             sessionStorage.setItem('token', idToken)
-            
+            navigate(state?.path || "/");
+
         }).catch(function (error) {
             // Handle error
         });
