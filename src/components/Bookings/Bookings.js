@@ -21,7 +21,8 @@ const Bookings = () => {
         <div>
             <h3>You Have {bookings.length} bookings</h3>
             {
-                bookings.map((book) => <li key={Math.random().toString(36).substr(2, 9)}>
+                //  bookings.map((book) => <li key={Math.random().toString(36).substr(2, 9)}>
+                bookings.map((book) => <li key={book._id}>
                     {book.name}, From: {book.checkIn} To: {book.checkOut} </li>)
             }
         </div>
